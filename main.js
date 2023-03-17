@@ -16,19 +16,25 @@ if(localStorage.getItem("bestBrain")){
         cars[i].brain=JSON.parse(
             localStorage.getItem("bestBrain"));
         if(i!=0){
-            NeuralNetwork.mutate(cars[i].brain,0.1);
+            NeuralNetwork.mutate(cars[i].brain,0.05);
         }
     }
 }
 
 const traffic=[
-    new Car(road.getLaneCenter(1),-100,30,50,"DUMMY",2,getRandomColor()),
-    new Car(road.getLaneCenter(0),-300,30,50,"DUMMY",2,getRandomColor()),
-    new Car(road.getLaneCenter(2),-300,30,50,"DUMMY",2,getRandomColor()),
-    new Car(road.getLaneCenter(0),-500,30,50,"DUMMY",2,getRandomColor()),
-    new Car(road.getLaneCenter(1),-500,30,50,"DUMMY",2,getRandomColor()),
-    new Car(road.getLaneCenter(1),-700,30,50,"DUMMY",2,getRandomColor()),
-    new Car(road.getLaneCenter(2),-700,30,50,"DUMMY",2,getRandomColor()),
+    new Car(road.getLaneCenter(1),-100,30,50,"DUMMY",5,getRandomColor()),
+    new Car(road.getLaneCenter(0),-300,30,50,"DUMMY",5,getRandomColor()),
+    new Car(road.getLaneCenter(2),-300,30,50,"DUMMY",5,getRandomColor()),
+    new Car(road.getLaneCenter(0),-500,30,50,"DUMMY",5,getRandomColor()),
+    new Car(road.getLaneCenter(1),-500,30,50,"DUMMY",5,getRandomColor()),
+    new Car(road.getLaneCenter(1),-700,30,50,"DUMMY",5,getRandomColor()),
+    new Car(road.getLaneCenter(2),-700,30,50,"DUMMY",5,getRandomColor()),
+    new Car(road.getLaneCenter(1),-800,30,50,"DUMMY",5,getRandomColor()),
+    new Car(road.getLaneCenter(0),-900,30,50,"DUMMY",5,getRandomColor()),
+    new Car(road.getLaneCenter(2),-900,30,50,"DUMMY",5,getRandomColor()),
+    new Car(road.getLaneCenter(1),-1000,30,50,"DUMMY",5,getRandomColor()),
+    new Car(road.getLaneCenter(2),-1200,30,50,"DUMMY",5,getRandomColor()),
+    new Car(road.getLaneCenter(0),-1100,30,50,"DUMMY",5,getRandomColor()),
 ];
 
 animate();
@@ -45,7 +51,7 @@ function discard(){
 function generateCars(N){
     const cars=[];
     for(let i=1;i<=N;i++){
-        cars.push(new Car(road.getLaneCenter(1),100,30,50,"AI"));
+        cars.push(new Car(road.getLaneCenter(1),100,30,50,"AI", 10));
     }
     return cars;
 }
